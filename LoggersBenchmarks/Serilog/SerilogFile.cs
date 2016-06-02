@@ -21,7 +21,7 @@ namespace LoggersBenchmarks.Serilog
         }
 
         [Benchmark]
-        public void Console()
+        public void File()
         {
             Log.Debug("{AppName} Test Message", "SeqLog");
             Log.Information("{AppName} Test Message", "SeqLog");
