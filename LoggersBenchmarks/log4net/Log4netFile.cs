@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Columns;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Jobs;
 using log4net;
 using log4net.Appender;
 using log4net.Core;
@@ -12,9 +15,17 @@ using log4net.Repository.Hierarchy;
 
 namespace LoggersBenchmarks.log4net
 {
-    [Config("jobs=Dry")]
+    [Config(typeof(Config))]
     public class Log4netFile
     {
+        private class Config : ManualConfig
+        {
+            public Config()
+            {
+                Add(Job.Dry.WithTargetCount(5).WithLaunchCount(3));
+            }
+        }
+
         private ILog _log;
 
         public Log4netFile()

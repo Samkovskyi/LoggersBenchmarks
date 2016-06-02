@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Running;
 using LoggersBenchmarks.log4net;
 using LoggersBenchmarks.Serilog;
@@ -18,12 +19,5 @@ namespace LoggersBenchmarks
         {
             var summury = BenchmarkRunner.Run<Log4netFile>();
         }
-
-        [TestMethod]
-        public void SeqLogTest()
-        {
-           // var summury = BenchmarkRunner.Run<SerilogSeq>();
-        }
-
     }
 }
