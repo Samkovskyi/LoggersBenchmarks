@@ -43,6 +43,10 @@
       <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.3.4\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.2.0.0-rc-598\lib\net45\Serilog.dll</HintPath>
       <Private>True</Private>
@@ -80,8 +84,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="NLogTest.cs" />
     <Compile Include="log4net\Log4netFile.cs" />
     <Compile Include="Log4NetTest.cs" />
+    <Compile Include="NLog\NLogFile.cs" />
     <Compile Include="SerilogTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serilog\SerilogFile.cs" />
@@ -90,9 +96,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NLog\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

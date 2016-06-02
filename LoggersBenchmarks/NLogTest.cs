@@ -1,16 +1,16 @@
 using BenchmarkDotNet.Running;
-using LoggersBenchmarks.log4net;
+using LoggersBenchmarks.NLog;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LoggersBenchmarks
 {
     [TestClass]
-    public class Log4NetTest
+    public class NLogTest
     {
         [TestMethod]
         public void FileLogTest()
         {
-            BenchmarkRunner.Run<Log4netFile>();
+            BenchmarkRunner.Run<NLogFile>();
         }
     }
 }
